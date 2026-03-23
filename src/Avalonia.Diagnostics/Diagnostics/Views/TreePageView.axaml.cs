@@ -7,7 +7,7 @@ using Avalonia.Markup.Xaml;
 
 namespace Avalonia.Diagnostics.Views
 {
-    internal class TreePageView : UserControl
+    internal partial class TreePageView : UserControl
     {
         private TreeViewItem? _hovered;
         private TreeView _tree;
@@ -69,11 +69,6 @@ namespace Avalonia.Diagnostics.Views
                 if (change.GetNewValue<object?>() is TreePageViewModel newViewModel)
                     newViewModel.ClipboardCopyRequested += OnClipboardCopyRequested;
             }
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         private void OnClipboardCopyRequested(object? sender, string selector)

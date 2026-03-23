@@ -5,7 +5,7 @@ using Avalonia.Markup.Xaml;
 
 namespace Avalonia.Diagnostics.Views
 {
-    internal class ControlDetailsView : UserControl
+    internal partial class ControlDetailsView : UserControl
     {
         private DataGrid _dataGrid;
 
@@ -14,11 +14,6 @@ namespace Avalonia.Diagnostics.Views
             InitializeComponent();
 
             _dataGrid = this.GetControl<DataGrid>("DataGrid");
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         private void PropertiesGrid_OnDoubleTapped(object sender, TappedEventArgs e)

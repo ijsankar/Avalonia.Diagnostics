@@ -17,7 +17,7 @@ using Avalonia.Reactive;
 
 namespace Avalonia.Diagnostics.Views
 {
-    internal class MainWindow : Window, IStyleHost
+    internal partial class MainWindow : Window, IStyleHost
     {
         private readonly IDisposable? _inputSubscription;
         private readonly HashSet<Popup> _frozenPopupStates;
@@ -115,11 +115,6 @@ namespace Avalonia.Diagnostics.Views
             }
 
             ((MainViewModel?)DataContext)?.Dispose();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         private Control? GetHoveredControl(TopLevel topLevel)

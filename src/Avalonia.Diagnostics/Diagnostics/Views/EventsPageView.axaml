@@ -76,7 +76,7 @@
                SelectedItem="{Binding SelectedEvent, Mode=TwoWay}">
         <ListBox.Styles>
           <Style Selector="ListBoxItem">
-            <Setter Property="Classes.handled" Value="{Binding IsHandled, DataType=vm:FiredEvent}" />
+            <Setter Property="Classes.handled" Value="{Binding IsHandled, x:DataType=vm:FiredEvent}" />
           </Style>
         </ListBox.Styles>
 
@@ -117,7 +117,7 @@
         <ListBox ItemsSource="{Binding SelectedEvent.EventChain}">
           <ListBox.Styles>
             <Style Selector="ListBoxItem">
-              <Setter Property="Classes.handled" Value="{Binding Handled, DataType=models:EventChainLink}" />
+              <Setter Property="Classes.handled" Value="{Binding Handled, x:DataType=models:EventChainLink}" />
             </Style>
           </ListBox.Styles>
           <ListBox.ItemTemplate>

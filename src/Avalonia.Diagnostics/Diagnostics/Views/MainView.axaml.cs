@@ -6,16 +6,11 @@ using Avalonia.Threading;
 
 namespace Avalonia.Diagnostics.Views
 {
-    internal class MainView : UserControl
+    internal partial class MainView : UserControl
     {
         public MainView()
         {
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
     }
 }

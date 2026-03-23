@@ -12,7 +12,7 @@ using Avalonia.Threading;
 
 namespace Avalonia.Diagnostics.Views
 {
-    internal class EventsPageView : UserControl
+    internal partial class EventsPageView : UserControl
     {
         private readonly ListBox _events;
         private IDisposable? _adorner;
@@ -67,11 +67,6 @@ namespace Avalonia.Diagnostics.Views
 
                 Dispatcher.UIThread.Post(() => _events.ScrollIntoView(evt));
             }
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         private void ListBoxItem_PointerEntered(object? sender, PointerEventArgs e)
