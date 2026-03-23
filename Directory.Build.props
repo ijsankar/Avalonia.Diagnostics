@@ -1,5 +1,6 @@
 <Project>
     <PropertyGroup>
+        <Nullable>enable</Nullable>
         <AvsCurrentTargetFramework>net8.0</AvsCurrentTargetFramework>
         <AvsLegacyTargetFrameworks>net6.0</AvsLegacyTargetFrameworks>
         <LangVersion>12.0</LangVersion>
