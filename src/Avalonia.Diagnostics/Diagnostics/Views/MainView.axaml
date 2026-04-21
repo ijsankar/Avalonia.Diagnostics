@@ -252,18 +252,6 @@
       </MenuItem>
     </Menu>
     
-
-   <HyperlinkButton Grid.Row="1"
-                    CornerRadius="0"
-                    NavigateUri="https://avaloniaui.net/accelerate" 
-                    Content="Try the new Avalonia Dev Tools – now available in Accelerate." 
-                    Background="#F3ECC0" Foreground="#746D44"
-                    Height="30"
-                    HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"
-                    FontWeight="Bold" FontSize="14"/>
-
-
     <TabStrip Grid.Row="2" SelectedIndex="{Binding SelectedTab, Mode=TwoWay}">
       <TabStripItem Content="Logical Tree" />
       <TabStripItem Content="Visual Tree" />
