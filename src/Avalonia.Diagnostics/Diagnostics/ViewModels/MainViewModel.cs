@@ -48,11 +48,17 @@ namespace Avalonia.Diagnostics.ViewModels
             if (KeyboardDevice.Instance is not null)
                 KeyboardDevice.Instance.PropertyChanged += KeyboardPropertyChanged;
             SelectedTab = 0;
-            if (root is TopLevel topLevel)
+            if (root is IInputRoot topLevel)
             {
                 _pointerOverRoot = topLevel;
-                _pointerOverSubscription = topLevel.GetObservable(TopLevel.PointerOverElementProperty)
-                    .Subscribe(x => PointerOverElement = x);
+                // _pointerOverSubscription = topLevel.GetObservable()
+                //     .Subscribe(x => PointerOverElement = x);
+                _pointerOverSubscription = InputManager.Instance!.PreProcess
+                    .Subscribe(e =>
+                    {
+                        PointerOverRoot = topLevel;
+                        PointerOverElement = topLevel.PointerOverElement;
+                    });
 
             }
             else
@@ -63,7 +69,7 @@ namespace Avalonia.Diagnostics.ViewModels
                             if (e is Input.Raw.RawPointerEventArgs pointerEventArgs)
                             {
                                 PointerOverRoot = pointerEventArgs.Root;
-                                PointerOverElement = pointerEventArgs.Root.InputHitTest(pointerEventArgs.Position);
+                                PointerOverElement = pointerEventArgs.Root.PointerOverElement;
                             }
                         });
             }
